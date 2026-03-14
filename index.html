@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Weather</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-day">
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-cloud-sun-rain"></i> Aura
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <!-- Settings / Unit Toggle -->
+            <div class="nav-controls">
+                <button id="unit-toggle" class="unit-toggle" aria-label="Toggle Temperature Unit">
+                    <span class="active">°C</span> | <span>°F</span>
+                </button>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home / Search Section -->
+        <section id="home" class="section search-section">
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Weather, <span>redesigned.</span></h1>
+                    <p>Get real-time weather updates and forecasts with a beautiful, dynamic interface.</p>
+                </div>
+
+                <form id="search-form" class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-location-dot search-icon"></i>
+                        <input type="text" id="city-input" placeholder="Enter a city name (e.g., London, Tokyo)"
+                            autocomplete="off">
+                    </div>
+                    <button type="submit" id="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i> Search
+                    </button>
+                </form>
+                <div id="error-message" class="error-message hidden">
+                    <i class="fa-solid fa-circle-exclamation"></i> <span>City not found. Please try again.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Details Dashboard -->
+        <section id="dashboard" class="section dashboard-section hidden">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h2 id="city-name-display">London, UK</h2>
+                    <p id="current-date">Monday, 14 March 2026</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Current Weather Card -->
+                    <div class="glass-card main-weather-card">
+                        <div class="weather-main-info">
+                            <i id="main-weather-icon" class="fa-solid fa-cloud weather-icon-large"></i>
+                            <div class="temperature-container">
+                                <h1 id="current-temp">12<span class="unit">°C</span></h1>
+                                <p id="weather-description">Cloudy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weather Details Cards -->
+                    <div class="glass-card details-card">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div class="detail-text">
+                                <p class="label">Humidity</p>
+                                <h3 id="humidity">78%</h3>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-wind"></i>
+                            <div class="detail-text">
+                                <p class="label">Wind Speed</p>
+                                <h3 id="wind-speed">15 km/h</h3>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <div class="detail-text">
+                                <p class="label">Pressure</p>
+                                <h3 id="pressure">1012 hPa</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container glass-card about-card">
+                <div class="about-content">
+                    <h2>About Aura</h2>
+                    <p>Aura is a modern, responsive weather application built to provide beautifully accurate forecasts.
+                        The dashboard dynamically adapts to the time of day and current weather conditions of your
+                        searched location, offering a seamless user experience across all devices.</p>
+                    <p>Built using HTML, CSS, and JS.</p>
+                </div>
+                <div class="about-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3><i class="fa-solid fa-cloud-sun-rain"></i> Aura</h3>
+                <p>Designed for the modern web.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <a href="#" target="_blank">Terms & Conditions</a>
+                    <a href="#" target="_blank">Privacy Policy</a>
+                    <p class="copyright">&copy; 2026 Aura Weather. All rights reserved.</p>
+                </div>
+
+                <div class="link-group">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" aria-label="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
